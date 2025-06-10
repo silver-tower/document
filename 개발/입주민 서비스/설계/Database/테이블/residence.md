@@ -1,11 +1,11 @@
-## Residence (거주지)
+## residence (거주지)
 
 | **필드명**      | **필드 설명** | **타입**      | **속성**                    | **코멘트**                                                                               |
 |--------------|-----------|-------------|---------------------------|---------------------------------------------------------------------------------------|
 | residence_id | 거주지 고유 ID | INT         | PRIMARY KEY               | AUTO_INCREMENT                                                                        |
 | building     | 동 이름      | VARCHAR(10) | NOT NULL                  | 거주지가 위치한 건물 이름                                                                        |
 | floor_number | 층 수       | VARCHAR(10) | NOT NULL                  | 몇 층인지 나타냄                                                                             |
-| room_number  | 호수        | VARCHAR(10) | NOT NULL                  | 특정 층의 몇 호인지 나타냄                                                                       |
+| room_line    | 거주지 라인    | VARCHAR(10) | NOT NULL                  | 특정 층의 몇 호 라인인지 나타냄                                                                    |
 | status       | 거주지 상태    | ENUM        | NOT NULL                  | ACTIVE(사용 중), INACTIVE(비어 있음), PENDING(승인 대기), UNAVAILABLE(사용 불가), DELETED(삭제)로 상태 분류 |
 | notes        | 추가 메모     | TEXT        | NULLABLE                  | 거주지 관련 비고 및 관리자가 남긴 추가 정보                                                             |
 | created_at   | 생성일시      | DATETIME    | DEFAULT now()             | 레코드가 생성된 일시                                                                           |
@@ -13,12 +13,12 @@
 
 ```sql
 
-CREATE TABLE Residence
+CREATE TABLE residence
 (
     residence_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '거주지 고유 ID',
     building     VARCHAR(10) NOT NULL COMMENT '동 이름',
     floor_number VARCHAR(10) NOT NULL COMMENT '층 수',
-    room_number  VARCHAR(10) NOT NULL COMMENT '호수',
+    room_line  VARCHAR(10) NOT NULL COMMENT '라인',
     status       ENUM('ACTIVE', 'INACTIVE', 'PENDING', 'UNAVAILABLE', 'DELETED') NOT NULL 
         DEFAULT 'INACTIVE' COMMENT '거주지 상태 (사용 중, 비어 있음, 승인 대기, 사용 불가, 삭제)',
     notes        TEXT COMMENT '거주지에 대한 추가 메모',
@@ -26,8 +26,8 @@ CREATE TABLE Residence
     updated_at   DATETIME DEFAULT current_timestamp ON UPDATE current_timestamp COMMENT '갱신일시'
 ) COMMENT='Residence 테이블 - 거주지 정보를 저장';
 
-CREATE INDEX idx_building_floor_unit ON Residence (building_name, floor_number, unit_number);
-CREATE INDEX idx_status ON Residence (status);
+CREATE INDEX idx_building_floor_unit ON residence (building_name, floor_number, unit_number);
+CREATE INDEX idx_status ON residence (status);
 
 ```
 
