@@ -1,16 +1,16 @@
 ## person (사용자)
 
-| 필드명          | 필드 설명      | 타입           | 속성              | 코멘트            | 비고  |
-|--------------|------------|--------------|-----------------|----------------|-----|
-| person_id    | 사람 고유 ID   | INT          | PRIMARY KEY     | AUTO_INCREMENT | 식별자 |
-| name         | 이름         | VARCHAR(100) | NOT NULL        |                |     |
-| birth_date   | 생년월일       | DATE         | NOT NULL        | YYYY-MM-DD 형식  |     |
-| phone_number | 연락처        | VARCHAR(20)  | NOT NULL,UNIQUE | 사용자 전화번호       |     |
-| email        | 비상 연락처 이메일 | VARCHAR(255) | NULLABLE        | 이메일            |     |
-| gender | 성별 | ENUM | NOT NULL | M(남), F(여), U(기타)         | |
-| status | 현재 상태 | ENUM | NOT NULL | ACTIVE, INACTIVE, DELETED | |
-| created_at | 생성일시 | DATETIME | DEFAULT now()             | 가입 날짜 | |
-| updated_at | 갱신일시 | DATETIME | DEFAULT current_timestamp | 마지막 정보 수정 기록 | |
+| 필드명          | 필드 설명      | 타입           | 속성                        | 코멘트                       | 비고  |
+|--------------|------------|--------------|---------------------------|---------------------------|-----|
+| person_id    | 사람 고유 ID   | INT          | PRIMARY KEY               | AUTO_INCREMENT            | 식별자 |
+| name         | 이름         | VARCHAR(100) | NOT NULL                  |                           |     |
+| birth_date   | 생년월일       | DATE         | NOT NULL                  | YYYY-MM-DD 형식             |     |
+| phone_number | 연락처        | VARCHAR(20)  | NOT NULL,UNIQUE           | 사용자 전화번호                  |     |
+| email        | 비상 연락처 이메일 | VARCHAR(255) | NULLABLE                  | 이메일                       |     |
+| gender       | 성별         | ENUM         | NOT NULL                  | M(남), F(여), U(기타)         |     |
+| status       | 현재 상태      | ENUM         | NOT NULL                  | ACTIVE, INACTIVE, DELETED |     |
+| created_at   | 생성일시       | DATETIME     | DEFAULT now()             | 가입 날짜                     |     |
+| updated_at   | 갱신일시       | DATETIME     | DEFAULT current_timestamp | 마지막 정보 수정 기록              |     |
 
 ```sql
 CREATE TABLE person
