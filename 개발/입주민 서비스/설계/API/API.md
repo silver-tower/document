@@ -4,13 +4,12 @@
 
 ``` json
 {
-    "code": "XXXXX", // 응답코드
-    "message": "OK", // 응답 메시지
-    "data":{ // 요청한 데이터가 없으면 빈 객체 응답
-          ...생략...
+    "success": true,
+    "timestamp": "2025-06-18T23:29:51.823355",
+    "data": {
+        ...생략...
     },
-    "uuid":"xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx",
-    "timestamp":"..."
+    "uuid": "ee5b7a7e-0c18-4033-ba96-74dbf3e57837"
 }
 ```
 
@@ -18,11 +17,13 @@
 
 ``` json
 {
-    "code": "XXXXX", // 응답코드
-    "message": "OK", // 응답 메시지
-    "errorMessage":"", // 오류메시지
-    "uuid":"xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx",
-    "timestamp":"..."
+    "success": false,
+    "timestamp": "2025-06-18T23:28:15.885038",
+    "error": {
+        "code": "U4002",
+        "message": "중복된 사용자입니다."
+    },
+    "uuid": "a57fb101-669a-4278-be5a-a3194c09b8b5"
 }
 ```
 
