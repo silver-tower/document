@@ -8,7 +8,9 @@
     "message": "OK", // 응답 메시지
     "data":{ // 요청한 데이터가 없으면 빈 객체 응답
           ...생략...
-    }
+    },
+    "uuid":"xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx",
+    "timestamp":"..."
 }
 ```
 
@@ -18,7 +20,9 @@
 {
     "code": "XXXXX", // 응답코드
     "message": "OK", // 응답 메시지
-    "errorMessage":"" // 오류메시지
+    "errorMessage":"", // 오류메시지
+    "uuid":"xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx",
+    "timestamp":"..."
 }
 ```
 
