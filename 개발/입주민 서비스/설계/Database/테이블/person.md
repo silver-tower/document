@@ -20,7 +20,7 @@ CREATE TABLE person
     birth_date   DATE         NOT NULL COMMENT '생년월일 (YYYY-MM-DD 형식)',
     phone_number VARCHAR(20)  NOT NULL COMMENT '연락처',
     email        VARCHAR(255) DEFAULT NULL COMMENT '비상 연락처 이메일',
-    gender       ENUM('남', '여', '기타') NOT NULL COMMENT '성별',
+    gender       ENUM('M', 'F', 'U') NOT NULL COMMENT '성별',
     status       ENUM('ACTIVE', 'INACTIVE', 'DELETED') NOT NULL DEFAULT 'ACTIVE' COMMENT '현재 상태 (정상, 비활성화, 삭제)',
     created_at   DATETIME     DEFAULT now() COMMENT '생성일시',
     updated_at   DATETIME     DEFAULT current_timestamp ON UPDATE current_timestamp COMMENT '갱신일시'
